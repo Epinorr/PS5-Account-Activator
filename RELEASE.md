@@ -1,27 +1,23 @@
-# Release checklist
+# Release procedure
 
-## 1. Upload
+1. Upload the contents of this directory to the **root** of your GitHub repository (not inside another folder).
+2. Make sure the workflow path is exactly `.github/workflows/ps5.yml` and that this file is on the default branch.
+3. Commit and push to `main`.
+4. Open **Actions → PS5 Account Activator → Build ELF** and run it manually, or wait for the push-triggered build.
+5. Download the `EPINOR-Account-Activator` artifact and test the ELF on your target PS5 payload loader.
+6. After the device test succeeds, create and push a tag:
 
-Upload the contents of this folder to the root of your GitHub repository. Keep the `.github/workflows/` directory exactly as-is.
+```sh
+git tag v1.0.0
+git push origin v1.0.0
+```
 
-## 2. Build check
-
-Open **Actions** and select **Build PS5 ELF**. Click **Run workflow**.
-
-A successful run produces the artifact:
-
-- `EPINOR-Account-Activator`
-
-containing:
+The same workflow will create the GitHub Release and attach:
 
 - `EPINOR-Account-Activator.elf`
 - `SHA256SUMS.txt`
 
-## 3. First console test
-
-Before publishing a release, download the generated ELF artifact and test it on the target PS5 payload loader.
-
-Expected successful notification:
+Expected success notification:
 
 ```text
 Account Activator
@@ -32,7 +28,7 @@ User: <current user>
 Coded by EPINOR
 ```
 
-When already activated:
+Expected already-active notification:
 
 ```text
 Account Activator
@@ -42,14 +38,3 @@ User: <current user>
 
 Coded by EPINOR
 ```
-
-## 4. Publish release
-
-Create and push a semantic version tag, for example:
-
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-The **Release PS5 ELF** workflow will build the tagged commit and create the GitHub Release with the ELF and SHA-256 checksum attached.
