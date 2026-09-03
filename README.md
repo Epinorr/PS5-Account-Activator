@@ -1,42 +1,87 @@
 # EPINOR PS5 Account Activator
 
-A small one-shot PS5 ELF payload that activates the current foreground user account using the same registry-based activation approach used by established PS5 offline-account activation projects.
+A lightweight, standalone PS5 payload for activating the currently selected user account.
 
-## Behavior
+**Simple. Fast. One purpose.**
 
-The payload:
+---
 
-1. Initializes `SceUserService`.
-2. Gets the foreground user and username.
-3. Locates that user's account registry slot.
-4. Reads the existing Account ID.
-5. Leaves an already-active account untouched.
-6. Otherwise generates the Account ID, writes account type `np`, and writes flags `4098`.
-7. Sends a device notification with the result and `Coded by EPINOR`.
+## What is this?
 
-It does not enable Remote Play, export/import saves, or online PSN gaming.
+**EPINOR PS5 Account Activator** is a standalone payload designed for jailbroken PS5 consoles.
 
-## Build
+It takes the account activation functionality and turns it into a simple, focused tool:
 
-This project uses the `ps5-payload-dev/sdk` Makefile toolchain.
+> **Run the payload → activate the current account → receive a confirmation notification.**
 
-```sh
-export PS5_PAYLOAD_SDK=/opt/ps5-payload-sdk
-make clean all
-```
+There are no menus, no configuration, and no Remote Play setup required.
 
-Output:
+---
+
+## Features
+
+- Automatically detects the currently selected PS5 user
+- Activates the selected account when necessary
+- Detects already-activated accounts
+- Displays a system notification with the result
+- Standalone `.elf` payload
+- Lightweight and focused on a single task
+- Does not require Remote Play pairing
+
+Every notification includes:
+
+**Coded by EPINOR**
+
+---
+
+## Download
+
+The latest compiled `.elf` file is available in the Releases section.
+
+**[Download Latest Release](../../releases/latest)**
+
+---
+
+## Requirements
+
+- A jailbroken PS5
+- A compatible PS5 firmware
+- A payload sender capable of loading `.elf` payloads
+
+No additional hardware, USB device, or Remote Play pairing is required by the payload itself.
+
+---
+
+## Usage
+
+### 1. Download
+
+Download the latest:
+
+`EPINOR-Account-Activator.elf`
+
+from the [Latest Release](../../releases/latest).
+
+### 2. Send the payload
+
+Send the `.elf` payload to your PS5 using your preferred payload sender.
+
+### 3. Done
+
+The payload automatically detects the currently selected user and performs the required activation.
+
+A notification will appear showing the result.
+
+---
+
+## Notifications
+
+### Successfully activated
 
 ```text
-EPINOR-Account-Activator.elf
-```
+Account Activator
 
-## GitHub Actions
+Account activated successfully
+User: <current user>
 
-`.github/workflows/ps5.yml` checks out SDK v0.42, builds the SDK into the runner tool-cache, builds the payload, verifies the resulting ELF, and uploads an artifact.
-
-Pushing a tag such as `v1.0.0` also publishes the ELF and SHA-256 checksum as a GitHub Release.
-
-## License / attribution
-
-GPL-3.0-or-later. The account activation logic is derived from GPL-licensed etaHEN / LightningMods and PS5Dev / ps5-payload-dev/offact sources.
+Coded by EPINOR
