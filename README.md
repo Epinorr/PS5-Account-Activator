@@ -1,4 +1,4 @@
-# EPINOR PS5 Account Activator
+# PS5 Account Activator
 
 A lightweight, standalone PS5 payload for activating the currently selected user account.
 
@@ -27,11 +27,6 @@ There are no menus, no configuration, and no Remote Play setup required.
 - Standalone `.elf` payload
 - Lightweight and focused on a single task
 - Does not require Remote Play pairing
-
-Every notification includes:
-
-**Coded by EPINOR**
-
 ---
 
 ## Download
@@ -58,7 +53,7 @@ No additional hardware, USB device, or Remote Play pairing is required by the pa
 
 Download the latest:
 
-`EPINOR-Account-Activator.elf`
+`Account-Activator.elf`
 
 from the [Latest Release](../../releases/latest).
 
