@@ -29,14 +29,6 @@ There are no menus, no configuration, and no Remote Play setup required.
 - Does not require Remote Play pairing
 ---
 
-## Download
-
-The latest compiled `.elf` file is available in the Releases section.
-
-**[Download Latest Release](../../releases/latest)**
-
----
-
 ## Requirements
 
 - A jailbroken PS5
