@@ -8,7 +8,7 @@ A lightweight, standalone PS5 payload for activating the currently selected user
 
 ## What is this?
 
-**EPINOR PS5 Account Activator** is a standalone payload designed for jailbroken PS5 consoles.
+** PS5 Account Activator** is a standalone payload designed for jailbroken PS5 consoles.
 
 It takes the account activation functionality and turns it into a simple, focused tool:
 
