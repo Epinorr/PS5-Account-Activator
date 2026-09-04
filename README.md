@@ -58,17 +58,3 @@ Send the `.elf` payload to your PS5 using your preferred payload sender.
 The payload automatically detects the currently selected user and performs the required activation.
 
 A notification will appear showing the result.
-
----
-
-## Notifications
-
-### Successfully activated
-
-```text
-Account Activator
-
-Account activated successfully
-User: <current user>
-
-Coded by EPINOR
